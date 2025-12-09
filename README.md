@@ -1,7 +1,7 @@
 # COMP-4513-Assignment-2
 # 📌 Overview
 
-This project is a single-page React application built for COMP 4513 (Winter 2025) Assignment 2.
+This project is a single-page React application built.
 It functions as a small online storefront where users can:
 
 - Browse products
@@ -14,8 +14,6 @@ It functions as a small online storefront where users can:
 
 - Access an admin-only dashboard
 
-The app is built according to Option 2 specifications and follows best practices in React, context management, and modular UI design.
-
 ## ✨ Features
 ### 🛍️ Product Catalog
 
@@ -27,51 +25,49 @@ The app is built according to Option 2 specifications and follows best practices
 
 - Data loaded via a service file from the provided API
 
-### 🛒 Shopping Cart (Global State)
+### 🛒 Shopping Cart
 
-- Managed using CartContext
+- Managed using ContextCart
 
 - Add/remove items from anywhere
 
 Cart page shows:
 
-- item list
+- Item list
 
-- product images
+- Product images
 
-- remove buttons
+- Remove buttons
 
-- running total
-
-- Cart persists in localStorage
+- Running total
 
 ### 🔐 Authentication (Modal Login)
 
-- Implemented using AuthContext
+- Implemented using Login
 
-- LoginView shows inside a Modal pop-out
+- Login view shows inside a Modal pop-out
 
 After successful login:
 
-- modal closes automatically
+- Modal closes automatically
 
-- header updates to show Logged In + username
+- Header updates to show Logged In
 
 - Includes admin and guest accounts
 
-### 🖥️ Admin Dashboard (Protected Route)
+### 🖥️ Admin Dashboard
 
 Only accessible to admin users
 
 Displays:
 
-- total products
+- Total products
 
-- average price
+- Tverage price
 
-- total inventory value
+- Total inventory value
 
-- top 5 highest-priced products
+- Top 5 highest-priced products
 
 ### 💬 About Dialog
 
@@ -83,9 +79,20 @@ Displays:
 
 - Utility classes used throughout
 
-- Clean, consistent design
+- Consistent design
 
-- Mobile-responsive layout
+### 🧩 Routing Overview
+| Route           | Description          |
+| --------------- | ---------------------|
+| `/`             | Landing page         |
+| `/mens`         | Mens Catalog         |
+| `/womens`       | Womens Catalog       |
+| `/browse`       | Browse               |
+| `/dashboard`    | Admin-only dashboard |
+| `/about`        | About the website    |
+| `/cart`         | Displays Cart        |
+| `/login`        | Login Page           |
+
 
 ### 🔑 Login Credentials
 | User  | Username | Password    | Role                 |
