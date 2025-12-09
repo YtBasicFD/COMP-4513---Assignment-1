@@ -1,109 +1,96 @@
-# COMP-4513 Assignment 1, Formula 1 Data API
+# COMP-4513-Assignment-2
+📌 Overview
 
-## Overview
-This assignment creates an F1 data API for querying. Some of the data includes: circuits, constructors, drivers, races, and results, which are returned in JSON format.
+This project is a single-page React application built for COMP 4513 (Winter 2025) Assignment 2.
+It functions as a small online storefront where users can:
 
-### Basic Link:
-https://comp-4513-f1-api-assignment-1.onrender.com/api/circuits
+Browse products
 
-### Example:
+View product details
 
-#### Request: 
+Add/remove items from a shopping cart
 
-[/api/drivers/leclerc](https://comp-4513-f1-api-assignment-1.onrender.com/api/drivers/leclerc)
-Exact URL:
-https://comp-4513-f1-api-assignment-1.onrender.com/api/drivers/leclerc 
+Authenticate using mock login
 
-#### Response:
+Access an admin-only dashboard
 
-```json
-[
-  {
-    "driverId":844,
-    "driverRef":"leclerc",
-    "number":16,
-    "code":"LEC",
-    "forename":"Charles",
-    "surname":"Leclerc",
-    "dob":"1997-10-16",
-    "nationality":"Monegasque",
-    "url":"http://en.wikipedia.org/wiki/Charles_Leclerc"
-  }
-]
-```
+The app is built according to Option 2 specifications and follows best practices in React, context management, and modular UI design.
 
-## Built with:
-NodeJS, Express, Render - https://comp-4513-f1-api-assignment-1.onrender.com
+✨ Features
+🛍️ Product Catalog
 
-## API Endpoints:
+Product list view
 
-| API Route (after https://comp-4513-f1-api-assignment-1.onrender.com) | Description |
-|---|---|
-| [/api/circuits] | Returns all the circuits. |
-| [/api/circuits/ref] | Returns a specified circuit. |
-| [/api/circuits/season/year] | Returns the circuits within the given season. |
-| [/api/constructors] | Returns all the constructors. |
-| [/api/constructors/ref] | Returns a specified constructor.|
-| [/api/drivers] | Returns all the drivers.|
-| [/api/drivers/ref] | Returns a specified driver.|
-| [/api/drivers/search/substring] | Returns the drivers by a "search" of a surname. |
-| [/api/drivers/race/raceId] | Returns the drivers specified by a raceId. |
-| [/api/races/raceId] | Returns a specified race using raceId given. |
-| [/api/races/season/year] | Returns the races within a provided season, that is ordered by round. |
-| [/api/races/season/year/round] | Returns a specific race by a given season and specified by the round number. |
-| [/api/races/circuits/ref] | Returns all the races for the provided circuit reference. |
-| [/api/races/circuits/ref/season/start/end] | Returns all the races for the provided circuit, as well as the provided year range. |
-| [/api/results/raceId] | Returns the race results for a specific raceId. |
-| [/api/results/driver/ref] | Returns all the race results for a given driver. |
-| [/api/results/drivers/ref/seasons/start/end] | Returns all the results for a given driver between the range of years given. |
-| [/api/qualifying/raceId] | Returns the qualifying results for a specified race. |
-| [/api/standings/drivers/raceId] | Returns the current season driver standings table for the specified raceId. |
-| [/api/standings/constructors/raceId] | Returns the current season constructors standings table for the specified raceId.|
+Individual product detail pages
 
-## Project Files:
+Displays title, price, stock, description, and images
 
-| File | Description |
-|---|---|
-| f1-server.js | The F1 data server/API, which listens for requests. |
-| f1-router.js (in scripts folder) | Handles the routes and returns the appropriate data in JSON.|
+Data loaded via a service file from the provided API
 
-## Test Links:
-https://comp-4513-f1-api-assignment-1.onrender.com/api/circuits <br>
-https://comp-4513-f1-api-assignment-1.onrender.com/api/circuits/monza <br>
-https://comp-4513-f1-api-assignment-1.onrender.com/api/circuits/calgary <br>
-<br>
-https://comp-4513-f1-api-assignment-1.onrender.com/api/constructors <br>
-https://comp-4513-f1-api-assignment-1.onrender.com/api/constructors/ferrari <br>
-<br>
-https://comp-4513-f1-api-assignment-1.onrender.com/api/drivers<br>
-Note: Made the driverRef (the following test link), Case **Insensitive**. <br>
-https://comp-4513-f1-api-assignment-1.onrender.com/api/drivers/Norris <br>
-https://comp-4513-f1-api-assignment-1.onrender.com/api/drivers/norris <br>
-https://comp-4513-f1-api-assignment-1.onrender.com/api/drivers/connolly <br>
-https://comp-4513-f1-api-assignment-1.onrender.com/api/drivers/search/sch <br>
-https://comp-4513-f1-api-assignment-1.onrender.com/api/drivers/search/xxxxx <br>
-https://comp-4513-f1-api-assignment-1.onrender.com/api/drivers/race/1069 <br>
-<br>
-https://comp-4513-f1-api-assignment-1.onrender.com/api/races/1034 <br>
-https://comp-4513-f1-api-assignment-1.onrender.com/api/races/season/2021 <br>
-https://comp-4513-f1-api-assignment-1.onrender.com/api/races/season/1800 <br>
-https://comp-4513-f1-api-assignment-1.onrender.com/api/races/season/2020/5 <br>
-https://comp-4513-f1-api-assignment-1.onrender.com/api/races/season/2020/100 <br>
-https://comp-4513-f1-api-assignment-1.onrender.com/api/races/circuits/7 <br>
-Note: the original test links given (previous one included) had a circuitRef that was a number. However, circuitRef is a string, so I created new test cases. <br>
-https://comp-4513-f1-api-assignment-1.onrender.com/api/races/circuits/monza <br>
-https://comp-4513-f1-api-assignment-1.onrender.com/api/races/circuits/monza/season/2015/2022 <br>
-https://comp-4513-f1-api-assignment-1.onrender.com/api/races/circuits/monza/season/2022/2022 <br>
-<br>
+🛒 Shopping Cart (Global State)
 
-https://comp-4513-f1-api-assignment-1.onrender.com/api/results/1106 <br>
-https://comp-4513-f1-api-assignment-1.onrender.com/api/results/driver/max_verstappen <br>
-https://comp-4513-f1-api-assignment-1.onrender.com/api/results/driver/connolly <br>
-https://comp-4513-f1-api-assignment-1.onrender.com/api/results/drivers/sainz/seasons/2021/2022 <br>
-https://comp-4513-f1-api-assignment-1.onrender.com/api/results/drivers/sainz/seasons/2035/2022 <br>
-<br>
-https://comp-4513-f1-api-assignment-1.onrender.com/api/qualifying/1106 <br>
-<br>
-https://comp-4513-f1-api-assignment-1.onrender.com/api/standings/drivers/1120 <br>
-https://comp-4513-f1-api-assignment-1.onrender.com/api/standings/constructors/1120 <br>
-https://comp-4513-f1-api-assignment-1.onrender.com/api/standings/constructors/asds 
+Managed using CartContext
+
+Add/remove items from anywhere
+
+Cart page shows:
+
+item list
+
+product images
+
+remove buttons
+
+running total
+
+Cart persists in localStorage
+
+🔐 Authentication (Modal Login)
+
+Implemented using AuthContext
+
+LoginView shows inside a Modal pop-out
+
+After successful login:
+
+modal closes automatically
+
+header updates to show Logged In + username
+
+Includes admin and guest accounts
+
+🖥️ Admin Dashboard (Protected Route)
+
+Only accessible to admin users
+
+Displays:
+
+total products
+
+average price
+
+total inventory value
+
+top 5 highest-priced products
+
+Protected with React Router route guards
+
+💬 About Dialog
+
+Shown as a modal pop-out
+
+Uses shared Modal component
+
+🎨 Tailwind UI
+
+Utility classes used throughout
+
+Clean, consistent design
+
+Mobile-responsive layout
+
+🔑 Login Credentials
+| User  | Username | Password    | Role                 |
+| ----- | -------- | ----------- | -------------------- |
+| Admin | `admin`  | `adminpass` | Can access dashboard |
+| Guest | `guest`  | `guestpass` | Regular user         |
