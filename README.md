@@ -1,5 +1,5 @@
 # COMP-4513-Assignment-2
-📌 Overview
+# 📌 Overview
 
 This project is a single-page React application built for COMP 4513 (Winter 2025) Assignment 2.
 It functions as a small online storefront where users can:
@@ -16,8 +16,8 @@ It functions as a small online storefront where users can:
 
 The app is built according to Option 2 specifications and follows best practices in React, context management, and modular UI design.
 
-✨ Features
-🛍️ Product Catalog
+## ✨ Features
+### 🛍️ Product Catalog
 
 - Product list view
 
@@ -27,69 +27,67 @@ The app is built according to Option 2 specifications and follows best practices
 
 - Data loaded via a service file from the provided API
 
-🛒 Shopping Cart (Global State)
+### 🛒 Shopping Cart (Global State)
 
-Managed using CartContext
+- Managed using CartContext
 
-Add/remove items from anywhere
+- Add/remove items from anywhere
 
 Cart page shows:
 
-item list
+- item list
 
-product images
+- product images
 
-remove buttons
+- remove buttons
 
-running total
+- running total
 
-Cart persists in localStorage
+- Cart persists in localStorage
 
-🔐 Authentication (Modal Login)
+### 🔐 Authentication (Modal Login)
 
-Implemented using AuthContext
+- Implemented using AuthContext
 
-LoginView shows inside a Modal pop-out
+- LoginView shows inside a Modal pop-out
 
 After successful login:
 
-modal closes automatically
+- modal closes automatically
 
-header updates to show Logged In + username
+- header updates to show Logged In + username
 
-Includes admin and guest accounts
+- Includes admin and guest accounts
 
-🖥️ Admin Dashboard (Protected Route)
+### 🖥️ Admin Dashboard (Protected Route)
 
 Only accessible to admin users
 
 Displays:
 
-total products
+- total products
 
-average price
+- average price
 
-total inventory value
+- total inventory value
 
-top 5 highest-priced products
+- top 5 highest-priced products
 
-Protected with React Router route guards
+### 💬 About Dialog
 
-💬 About Dialog
+- Shown as a modal pop-out
 
-Shown as a modal pop-out
+- Uses shared Modal component
 
-Uses shared Modal component
+### 🎨 Tailwind UI
 
-🎨 Tailwind UI
+- Utility classes used throughout
 
-Utility classes used throughout
+- Clean, consistent design
 
-Clean, consistent design
+- Mobile-responsive layout
 
-Mobile-responsive layout
-
-🔑 Login Credentials
+### 🔑 Login Credentials
 | User  | Username | Password    | Role                 |
 | ----- | -------- | ----------- | -------------------- |
 | Admin | `admin`  | `adminpass` | Can access dashboard |
