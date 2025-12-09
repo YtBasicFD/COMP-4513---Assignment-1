@@ -4,28 +4,28 @@
 This project is a single-page React application built for COMP 4513 (Winter 2025) Assignment 2.
 It functions as a small online storefront where users can:
 
-Browse products
+- Browse products
 
-View product details
+- View product details
 
-Add/remove items from a shopping cart
+- Add/remove items from a shopping cart
 
-Authenticate using mock login
+- Authenticate using mock login
 
-Access an admin-only dashboard
+- Access an admin-only dashboard
 
 The app is built according to Option 2 specifications and follows best practices in React, context management, and modular UI design.
 
 ✨ Features
 🛍️ Product Catalog
 
-Product list view
+- Product list view
 
-Individual product detail pages
+- Individual product detail pages
 
-Displays title, price, stock, description, and images
+- Displays title, price, stock, description, and images
 
-Data loaded via a service file from the provided API
+- Data loaded via a service file from the provided API
 
 🛒 Shopping Cart (Global State)
 
